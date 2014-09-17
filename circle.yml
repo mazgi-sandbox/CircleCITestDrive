@@ -6,7 +6,7 @@ dependencies:
 
 test:
   pre:
-    - cd webapp
+    - cd webapi
   override:
     - ./activator clean test
 
