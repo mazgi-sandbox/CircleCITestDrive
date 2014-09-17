@@ -3,7 +3,8 @@ dependencies:
     - ~/.m2
     - ~/.ivy2
     - ~/.sbt
-
+  override:
+    - cd webapi && ./activator update
 test:
   override:
     - cd webapi && ./activator clean test
