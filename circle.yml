@@ -5,8 +5,7 @@ dependencies:
     - ~/.sbt
 
 test:
-  pre:
-    - cd webapi
   override:
+    - cd webapi
     - ./activator clean test
 
