@@ -8,6 +8,9 @@ dependencies:
     - "./tools/activator/activator update"
 
 test:
+  pre:
+    - cd webapp
+
   override:
     - "./tools/activator/activator clean test"
 
