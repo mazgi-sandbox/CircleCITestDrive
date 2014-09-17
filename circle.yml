@@ -6,6 +6,5 @@ dependencies:
 
 test:
   override:
-    - cd webapi
-    - ./activator clean test
+    - cd webapi && ./activator clean test
 
