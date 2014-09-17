@@ -4,13 +4,8 @@ dependencies:
     - ~/.ivy2
     - ~/.sbt
 
-  override:
-    - "./tools/activator/activator update"
-
 test:
-  pre:
+  commands:
     - cd webapp
-
-  override:
-    - "./tools/activator/activator clean test"
+    - ./activator clean test
 
