@@ -1,3 +1,6 @@
+machine:
+  environment:
+    PATH: "${HOME}/.sbtenv/bin:${PATH}"
 notify:
   webhooks:
     # gitter hook
@@ -7,9 +10,13 @@ dependencies:
     - ~/.m2
     - ~/.ivy2
     - ~/.sbt
+    - ~/.sbtenv
   override:
-    - cd webapi && ./activator update
+    - test -d ~/.sbtenv || git clone git://github.com/mazgi/sbtenv.git ~/.sbtenv
+    - eval "$(sbtenv init -)"
+    - sbtenv versions | grep -q -E '^\s*sbt-0.13.5\s*$' || (sbtenv install sbt-0.13.5 && sbtenv rehash)
+    - cd webapi && sbt update
 test:
   override:
-    - cd webapi && ./activator clean test
+    - cd webapi && sbt clean test
 
