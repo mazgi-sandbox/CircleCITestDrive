@@ -14,7 +14,7 @@ dependencies:
   override:
     - test -d ~/.sbtenv || git clone git://github.com/mazgi/sbtenv.git ~/.sbtenv
     - eval "$(sbtenv init -)"
-    - sbtenv versions | grep -q -E '^\s*sbt-0.13.5\s*$' || (sbtenv install sbt-0.13.5 && sbtenv rehash)
+    - sbtenv versions | grep -q -E '^\s*sbt-0\.13\.5\s*$' || (sbtenv install sbt-0.13.5 && sbtenv rehash)
     - cd webapi && sbt update
 test:
   override:
