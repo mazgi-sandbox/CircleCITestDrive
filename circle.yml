@@ -1,3 +1,7 @@
+notify:
+  webhooks:
+    # gitter hook
+    - url: https://webhooks.gitter.im/e/d03f8e48b074a36a94e0
 dependencies:
   cache_directories:
     - ~/.m2
