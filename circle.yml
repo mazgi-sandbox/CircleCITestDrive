@@ -1,10 +1,13 @@
-machine:
-  environment:
-    PATH: "${HOME}/.sbtenv/bin:${PATH}"
 notify:
   webhooks:
     # gitter hook
     - url: https://webhooks.gitter.im/e/d03f8e48b074a36a94e0
+
+machine:
+  environment:
+    PATH: "${HOME}/.sbtenv/bin:${PATH}"
+  services:
+    - docker
 dependencies:
   cache_directories:
     - ~/.m2
