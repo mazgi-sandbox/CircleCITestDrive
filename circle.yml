@@ -21,6 +21,6 @@ dependencies:
     - cd webapi && sbt update
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) cd webapi && sbt clean test;; 1) echo '1' && true;; esac:
+    - case $CIRCLE_NODE_INDEX in 0) "cd webapi && sbt clean test";; 1) echo '1' && true;; esac:
       parallel: true
 
