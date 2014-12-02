@@ -20,7 +20,7 @@ dependencies:
     - sbtenv versions | grep -q -E '^\s*sbt-0\.13\.5\s*$' || (sbtenv install sbt-0.13.5 && sbtenv rehash)
     - cd webapi && sbt update
 test:
-  parallel: true
   override:
-    - case $CIRCLE_NODE_INDEX in 0) cd webapi && sbt clean test;; 1) echo '1' && true;; esac
+    - case $CIRCLE_NODE_INDEX in 0) cd webapi && sbt clean test;; 1) echo '1' && true;; esac:
+      parallel: true
 
